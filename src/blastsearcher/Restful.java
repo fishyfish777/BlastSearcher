@@ -1,9 +1,11 @@
 package blastsearcher;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
@@ -52,6 +54,24 @@ public class Restful {
 		return false;
 	}
 
+	public static boolean foundInFile(String query, String foldername, String filename)
+			throws FileNotFoundException {
+		
+		/*
+		 * Scans a file (namely, the downloaded HTML files) for a specified query.
+		 */
+		boolean containsString = false;
+		Scanner readFile = new Scanner(new File(foldername + "/" + filename));
+		readFile.useDelimiter("\\s+"); //Delimits @ one or more whitespaces
+		while (readFile.hasNext())
+			if (query.equals(readFile.next())) {
+				containsString = true;
+				break;
+			}
+		readFile.close();
+		return containsString;
+	}
+
 	public static void downloadHTML(String foldername, String filename,
 			String url) throws ClientProtocolException, IOException {
 		/*
@@ -72,10 +92,9 @@ public class Restful {
 			dir.mkdir();
 			dir = null;
 
+			// Scans the HTML file and writes it sequentially
 			String filePath = foldername + "/" + filename;
 			FileOutputStream fos = new FileOutputStream(new File(filePath));
-
-			// Scans the HTML file and writes it
 			int inByte;
 			while ((inByte = is.read()) != -1)
 				fos.write(inByte);
@@ -87,6 +106,5 @@ public class Restful {
 		} finally {
 			response.close();
 		}
-
 	}
 }
