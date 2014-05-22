@@ -31,9 +31,10 @@ public class Restful {
 		if (noUncultured) {
 			url += "&EXCLUDE_SEQ_UNCULT=on";
 		}
-
+		
+		// Download the file temporarily
 		try {
-			downloadHTML("test folder", "asdf.html", url);
+			downloadHTML("temp", "request.html", url);
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,35 +42,47 @@ public class Restful {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "";
+		
+		String requestID = "";
+		//Parse the tempfile for request ID
+		try {
+			System.out.println(requestID = findRequestID("temp", "request.html"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return requestID;
 	}
 
 	public boolean getRequest(String requestID, String filename) {
 		/*
 		 * This class takes a request ID and checks the request at a specific
 		 * interval until it is ready, then when ready loads up the results and
-		 * saves the HTML file of the results with the specified filename
+		 * saves the HTML file of the results with the specified filename, then
+		 * reports success with a true value (false for a timeout)
 		 */
 
 		return false;
 	}
 
-	public static boolean foundInFile(String query, String foldername, String filename)
-			throws FileNotFoundException {
-		
+	public static String findRequestID(String foldername,
+			String filename) throws FileNotFoundException {
+
 		/*
-		 * Scans a file (namely, the downloaded HTML files) for a specified query.
+		 * Scans a file (namely, the downloaded HTML files) for a specified
+		 * query.
 		 */
-		boolean containsString = false;
+		String requestID = "";
 		Scanner readFile = new Scanner(new File(foldername + "/" + filename));
-		readFile.useDelimiter("\\s+"); //Delimits @ one or more whitespaces
-		while (readFile.hasNext())
-			if (query.equals(readFile.next())) {
-				containsString = true;
+		//readFile.useDelimiter("\\s+"); // Delimits @ one or more whitespaces
+		while (readFile.hasNextLine())
+			if ("<!--QBlastInfoBegin".equalsIgnoreCase(readFile.nextLine())) {
+				requestID = readFile.nextLine();
+				requestID = requestID.substring(10,requestID.length());
 				break;
 			}
 		readFile.close();
-		return containsString;
+		return requestID;
 	}
 
 	public static void downloadHTML(String foldername, String filename,
