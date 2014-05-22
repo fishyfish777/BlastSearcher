@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE JoBo SYSTEM "jobo.dtd">
+
+<JoBo>
+
+ <Robot>
+  <!--  <AgentName>JoBo (http://www.matuschek.net/jobo.html)</AgentName> -->
+  <StartReferer>http://www.matuschek.net/jobo.html</StartReferer>
+  <IgnoreRobotsTxt>false</IgnoreRobotsTxt>
+  <SleepTime>5</SleepTime>
+  <MaxDepth>2</MaxDepth>
+  <WalkToOtherHosts>false</WalkToOtherHosts>
+  <Bandwidth>0</Bandwidth>
+  <!-- <MaxDocumentAge>30</MaxDocumentAge> -->
+  <AllowWholeHost>true</AllowWholeHost>
+  <AllowWholeDomain>false</AllowWholeDomain>
+  <AllowCaching>true</AllowCaching>  
+  <FlexibleHostCheck>false</FlexibleHostCheck>
+
+  <!-- Proxy configuration <Proxy>proxy.myprovider.com:80</Proxy>  -->
+
+
+  <!-- robot is allowed to visit these URLs more then once -->
+  <!-- (useful for forms with different parameter sets     -->
+  <VisitMany>http://www.matuschek.net</VisitMany>
+
+
+  <!-- form handler -->
+  <FormHandler url="http://www.matuschek.net/cgi-bin/test-cgi">
+   <FormField name="i" value="1"/>
+   <FormField name="j" value="2"/>
+   <FormField name="k" value="3"/>
+  </FormHandler>
+ </Robot>
+
+ <DownloadRuleSet>
+   <DownloadRule allow="true" mimeType="*/*"/>
+ </DownloadRuleSet>
+
+ <URLCheck>
+   <RegExpRule allow="true" pattern="." />
+ </URLCheck>
+
+ <LocalizeLinks>false</LocalizeLinks>
+ <StoreCGI>true</StoreCGI>
+
+</JoBo>
+
+

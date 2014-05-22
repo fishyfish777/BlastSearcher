@@ -28,33 +28,30 @@ public class Restful {
 		String url = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY="
 				+ query
 				+ "&DATABASE=nr&PROGRAM=blastn&FORMAT_TYPE=Text&NCBI_GI=on&HITLIST_SIZE=10&CMD=Put";
+		String requestID = "";
+
 		if (noUncultured) {
 			url += "&EXCLUDE_SEQ_UNCULT=on";
 		}
-		
-		// Download the file temporarily
+
+		// Download the file temporarily and then parse it
 		try {
-			downloadHTML("temp", "request.html", url);
-		} catch (ClientProtocolException e) {
+			// downloadHTML("temp", "request.html", url);
+			System.out
+					.println(requestID = findRequestID("temp", "request.html"));
+			// } catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		String requestID = "";
-		//Parse the tempfile for request ID
-		try {
-			System.out.println(requestID = findRequestID("temp", "request.html"));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		// Return the parsed request ID
 		return requestID;
 	}
 
-	public boolean getRequest(String requestID, String filename) {
+	public static boolean getRequest(String requestID, String filename) {
 		/*
 		 * This class takes a request ID and checks the request at a specific
 		 * interval until it is ready, then when ready loads up the results and
@@ -62,11 +59,21 @@ public class Restful {
 		 * reports success with a true value (false for a timeout)
 		 */
 
+		String searchurl = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?RID="
+				+ requestID + "&CMD=Get";
+
+		try {
+			downloadHTML("temp", "searching.html", searchurl);
+			System.out.println(checkIfReady("temp", "searching.html"));
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
 		return false;
 	}
 
-	public static String findRequestID(String foldername,
-			String filename) throws FileNotFoundException {
+	public static String findRequestID(String foldername, String filename)
+			throws FileNotFoundException {
 
 		/*
 		 * Scans a file (namely, the downloaded HTML files) for a specified
@@ -74,15 +81,40 @@ public class Restful {
 		 */
 		String requestID = "";
 		Scanner readFile = new Scanner(new File(foldername + "/" + filename));
-		//readFile.useDelimiter("\\s+"); // Delimits @ one or more whitespaces
+		// readFile.useDelimiter("\\s+"); // Delimits @ one or more whitespaces
 		while (readFile.hasNextLine())
 			if ("<!--QBlastInfoBegin".equalsIgnoreCase(readFile.nextLine())) {
 				requestID = readFile.nextLine();
-				requestID = requestID.substring(10,requestID.length());
+				requestID = requestID.substring(10, requestID.length());
 				break;
 			}
 		readFile.close();
 		return requestID;
+	}
+
+	public static boolean checkIfReady(String foldername, String filename)
+			throws FileNotFoundException {
+
+		/*
+		 * Scans a file (namely, the downloaded HTML files) for a specified
+		 * query.
+		 */
+		boolean ready = false;
+		Scanner readFile = new Scanner(new File(foldername + "/" + filename));
+		// readFile.useDelimiter("\\s+"); // Delimits @ one or more whitespaces
+		while (readFile.hasNextLine())
+			if ("QBlastInfoBegin".equalsIgnoreCase(readFile.nextLine())) {
+				if (readFile.nextLine().contains("READY")) {
+					ready = true;
+				} else if (readFile.nextLine().contains("WAITING")) {
+					ready = false;
+				} else {
+					System.out.println("Error checking ready status");
+				}
+				break;
+			}
+		readFile.close();
+		return ready;
 	}
 
 	public static void downloadHTML(String foldername, String filename,

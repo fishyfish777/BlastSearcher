@@ -1,0 +1,93 @@
+<!ELEMENT JoBo ( Robot? | 
+                 URLCheck? | 
+                 DownloadRuleSet? |
+                 LocalizeLinks? |
+                 StoreCGI )  >
+
+<!ELEMENT Robot ( AgentName? | 
+                  StartReferer? | 
+                  IgnoreRobotsTxt? |
+                  SleepTime? |
+                  MaxDepth? |
+                  WalkToOtherHosts? |
+                  Proxy? |
+		  Bandwidth? |
+                  MaxAge? |
+                  EnableCookies |
+                  AllowWholeHost? |
+                  AllowWholeDomain? |
+                  FlexibleHostCheck? |
+                  AllowCaching? |
+		  AllowedURL* |
+		  VisitMany* |
+		  FormHandler*
+		  )?  >
+
+<!ELEMENT URLCheck ( RegExpRule* )?  >
+
+<!ATTLIST URLCheck
+           default CDATA #IMPLIED >
+
+<!ELEMENT DownloadRuleSet ( DownloadRule* ) >
+
+<!ATTLIST DownloadRuleSet
+           default CDATA #IMPLIED >
+
+<!ELEMENT AgentName (#PCDATA)* >
+
+<!ELEMENT StartReferer (#PCDATA)* >
+
+<!ELEMENT IgnoreRobotsTxt (#PCDATA)* >
+
+<!ELEMENT SleepTime (#PCDATA)* >
+
+<!ELEMENT MaxDepth (#PCDATA)* >
+
+<!ELEMENT WalkToOtherHosts (#PCDATA)* >
+
+<!ELEMENT Proxy (#PCDATA)* >
+
+<!ELEMENT AllowWholeHost (#PCDATA)* >
+
+<!ELEMENT AllowWholeDomain (#PCDATA)* >
+
+<!ELEMENT AllowCaching (#PCDATA)* >
+
+<!ELEMENT FlexibleHostCheck (#PCDATA)* >
+
+<!ELEMENT AllowedURL (#PCDATA)* >
+
+<!ELEMENT VisitMany (#PCDATA)* >
+
+<!ELEMENT Bandwidth (#PCDATA)* >
+
+<!ELEMENT FormHandler ( FormField* ) >
+
+<!ATTLIST FormHandler 
+           url CDATA #REQUIRED >
+
+<!ELEMENT FormField EMPTY >
+
+<!ATTLIST FormField
+           name CDATA #REQUIRED
+	   value CDATA #REQUIRED >
+
+<!ELEMENT RegExpRule EMPTY >
+
+<!ATTLIST RegExpRule 
+           allow CDATA #REQUIRED
+           pattern CDATA  #REQUIRED >
+
+<!ELEMENT DownloadRule EMPTY >
+
+<!ATTLIST DownloadRule 
+           allow CDATA #REQUIRED
+           minSize CDATA #IMPLIED 
+           maxSize CDATA #IMPLIED 
+           mimeType CDATA #REQUIRED >
+
+<!ELEMENT LocalizeLinks ( #PCDATA ) >
+
+<!ELEMENT StoreCGI ( #PCDATA ) >
+
+
