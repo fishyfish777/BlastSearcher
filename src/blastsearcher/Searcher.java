@@ -35,13 +35,13 @@ public class Searcher extends Thread {
 		requestID = this.postRequest(search, true);
 	}
 
-	public void run()
-	{
+	public void run() {
 		System.out.println(name);
 		System.out.println(search);
 		this.getRequest(requestID, ID + "");
 		this.write();
 	}
+
 	public String postRequest(String query, boolean noUncultured) {
 		/*
 		 * This class posts an HTTP request to NCBI Blast using the specified
@@ -93,7 +93,8 @@ public class Searcher extends Thread {
 				i += 60;
 				Thread.sleep(60000);
 				this.downloadHTML("temp", filename + ".html", searchurl);
-				System.out.println(name + " is waiting with a request ID of " + requestID + "! (" + i + " seconds)");
+				System.out.println(name + " is waiting with a request ID of "
+						+ requestID + "! (" + i + " seconds)");
 			}
 			System.out.println(name + " search complete!");
 		} catch (Exception e1) {
@@ -157,17 +158,18 @@ public class Searcher extends Thread {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);
 		CloseableHttpResponse response = httpclient.execute(httpGet);
-		String tempresponse = "";
 		try {
-			tempresponse += response.getStatusLine();
-			
-			while (!tempresponse.contains("200"))
-			{
-				System.out.println("Web error - trying again in 10 seconds");
-				Thread.sleep(10000);
+			String tempresponse = response.getStatusLine().toString();
+			while (!tempresponse.contains("200")) {
+				System.out.println("Web error - "
+						+ response.getStatusLine().toString() + ", retrying");
+				httpclient = HttpClients.createDefault();
+				httpGet = new HttpGet(url);
 				response = httpclient.execute(httpGet);
+				tempresponse = response.getStatusLine().toString();
+				Thread.sleep(5000);
 			}
-			
+
 			HttpEntity entity1 = response.getEntity();
 			InputStream is = entity1.getContent();
 
@@ -186,30 +188,25 @@ public class Searcher extends Thread {
 			// Closing
 			is.close();
 			fos.close();
-			EntityUtils.consume(entity1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
 			response.close();
+			EntityUtils.consume(entity1);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
-	
-	public void write()
-	{
+
+	public void write() {
 		String output = "";
 		String tempbuffer;
 		String[] bufferparts;
-		//System.out.println("Writing output for " + name);
+		// System.out.println("Writing output for " + name);
 		Scanner readFile;
 		try {
-			
-			if (new File("temp/" + (ID) + ".html").exists()) {
-				output += (name + "\t"
-						+ search + "\t");
 
-				readFile = new Scanner(new File("temp/" + (ID)
-						+ ".html"));
+			if (new File("temp/" + (ID) + ".html").exists()) {
+				output += (name + "\t" + search + "\t");
+
+				readFile = new Scanner(new File("temp/" + (ID) + ".html"));
 				while (readFile.hasNextLine()) {
 					tempbuffer = readFile.nextLine();
 					if (tempbuffer.contains("Select seq ")) {
@@ -234,9 +231,7 @@ public class Searcher extends Thread {
 						break;
 					}
 				}
-			}
-			else
-			{
+			} else {
 				System.out.println("Temporary file does not exist for writing");
 			}
 			System.out.println("Output written for " + name);
@@ -244,5 +239,5 @@ public class Searcher extends Thread {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	} 
+	}
 }
