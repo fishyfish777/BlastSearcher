@@ -36,8 +36,6 @@ public class Searcher extends Thread {
 	}
 
 	public void run() {
-		System.out.println(name);
-		System.out.println(search);
 		this.getRequest(requestID, ID + "");
 		this.write();
 	}
@@ -52,7 +50,7 @@ public class Searcher extends Thread {
 		// Build the URL
 		String url = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY="
 				+ query
-				+ "&DATABASE=nr&PROGRAM=blastp&FORMAT_TYPE=Text&NCBI_GI=on&HITLIST_SIZE=10&CMD=Put";
+				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=5&CMD=Put&PROGRAM=blastp";
 		String requestID = "";
 
 		if (noUncultured) {
@@ -85,14 +83,14 @@ public class Searcher extends Thread {
 		 */
 
 		String searchurl = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?RID="
-				+ requestID + "&CMD=Get";
+				+ requestID + "&CMD=Get&FORMAT_TYPE=Text";
 		int i = 0;
 		try {
-			this.downloadHTML("temp", filename + ".html", searchurl);
-			while (false == this.checkIfReady("temp", filename + ".html")) {
+			this.downloadHTML("temp", filename + ".txt", searchurl);
+			while (!this.checkIfReady("temp", filename + ".txt")) {
 				i += 60;
 				Thread.sleep(60000);
-				this.downloadHTML("temp", filename + ".html", searchurl);
+				this.downloadHTML("temp", filename + ".txt", searchurl);
 				System.out.println(name + " is waiting with a request ID of "
 						+ requestID + "! (" + i + " seconds)");
 			}
@@ -130,20 +128,14 @@ public class Searcher extends Thread {
 		 * Scans a file (namely, the downloaded HTML files) for a specified
 		 * query.
 		 */
-		boolean ready = false;
+		boolean ready = true;
 		Scanner readFile = new Scanner(new File(foldername + "/" + filename));
-		// readFile.useDelimiter("\\s+"); // Delimits @ one or more whitespaces
 		while (readFile.hasNextLine())
-			if ("QBlastInfoBegin".equalsIgnoreCase(readFile.nextLine())) {
-				if (readFile.nextLine().contains("READY")) {
-					ready = true;
-				} else if (readFile.nextLine().contains("WAITING")) {
+			if (readFile.nextLine().contains("QBlastInfoBegin")) {
+				if (readFile.nextLine().contains("Status=WAITING")) {
 					ready = false;
-				} else {
-					System.out.println("Error checking ready status, check "
-							+ foldername + "/" + filename);
+					break;
 				}
-				break;
 			}
 		readFile.close();
 		return ready;
@@ -196,48 +188,5 @@ public class Searcher extends Thread {
 	}
 
 	public void write() {
-		String output = "";
-		String tempbuffer;
-		String[] bufferparts;
-		// System.out.println("Writing output for " + name);
-		Scanner readFile;
-		try {
-
-			if (new File("temp/" + (ID) + ".html").exists()) {
-				output += (name + "\t" + search + "\t");
-
-				readFile = new Scanner(new File("temp/" + (ID) + ".html"));
-				while (readFile.hasNextLine()) {
-					tempbuffer = readFile.nextLine();
-					if (tempbuffer.contains("Select seq ")) {
-						bufferparts = tempbuffer.split("Select seq ");
-						output += (bufferparts[1].split("<")[0] + "\t");
-					}
-					if (tempbuffer.contains("Go to alignment for")) {
-						bufferparts = tempbuffer.split("]");
-						output += (bufferparts[0].substring(29) + "]\t");
-						readFile.nextLine();
-						readFile.nextLine();
-						readFile.nextLine();
-						readFile.nextLine();
-						readFile.nextLine();
-						tempbuffer = readFile.nextLine();
-						bufferparts = tempbuffer.split(">");
-						output += (bufferparts[1].split("<")[0] + "\t"
-								+ bufferparts[3].split("<")[0] + "\n");
-						readFile.close();
-						System.out.println("Writing " + output);
-						Filewriter.printToFile(output);
-						break;
-					}
-				}
-			} else {
-				System.out.println("Temporary file does not exist for writing");
-			}
-			System.out.println("Output written for " + name);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

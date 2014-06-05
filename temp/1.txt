@@ -1,0 +1,167 @@
+<p><!--
+QBlastInfoBegin
+	Status=READY
+QBlastInfoEnd
+--><p>
+<PRE>
+BLASTP 2.2.29+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+Reference for compositional score matrix adjustment: Stephen
+F. Altschul, John C. Wootton, E. Michael Gertz, Richa
+Agarwala, Aleksandr Morgulis, Alejandro A. Schaffer, and
+Yi-Kuo Yu (2005) "Protein database searches using
+compositionally adjusted substitution matrices", FEBS J.
+272:5101-5109.
+
+
+RID: T02ZE33401R
+
+
+Database: All non-redundant GenBank CDS
+translations+PDB+SwissProt+PIR+PRF excluding environmental samples
+from WGS projects
+           40,910,947 sequences; 14,639,572,021 total letters
+Query= 
+Length=35
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                       (Bits)  Value
+
+ref|WP_012737192.1|  hypothetical protein [Klebsiella pneumoniae]  67.4    7e-14
+ref|WP_004872829.1|  hypothetical protein [Klebsiella pneumoniae]  66.2    3e-13
+gb|KDL20610.1|  hypothetical protein AF38_03842 [Klebsiella pn...  65.1    7e-13
+ref|WP_023313840.1|  hypothetical protein [Klebsiella pneumoniae]  65.5    1e-12
+ref|WP_004200765.1|  hypothetical protein [Klebsiella pneumoniae]  64.3    1e-12
+
+ALIGNMENTS
+>ref|WP_012737192.1| hypothetical protein [Klebsiella pneumoniae]
+ ref|YP_002917344.1| hypothetical protein KP1_0389 [Klebsiella pneumoniae subsp. pneumoniae 
+NTUH-K2044]
+ dbj|BAH61277.1| hypothetical protein KP1_0389 [Klebsiella pneumoniae subsp. pneumoniae 
+NTUH-K2044]
+Length=34
+
+ Score = 67.4 bits (163),  Expect = 7e-14, Method: Compositional matrix adjust.
+ Identities = 33/34 (97%), Positives = 33/34 (97%), Gaps = 0/34 (0%)
+
+Query  1   MPPSGTTASTVSDVYRPAALRLRGPTLFEPAEDS  34
+           MPPSGTTA TVSDVYRPAALRLRGPTLFEPAEDS
+Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPAEDS  34
+
+
+>ref|WP_004872829.1| hypothetical protein [Klebsiella pneumoniae]
+ gb|EEW38391.1| hypothetical protein HMPREF0484_5491 [Klebsiella pneumoniae subsp. 
+rhinoscleromatis ATCC 13884]
+Length=62
+
+ Score = 66.2 bits (160),  Expect = 3e-13, Method: Compositional matrix adjust.
+ Identities = 32/34 (94%), Positives = 32/34 (94%), Gaps = 0/34 (0%)
+
+Query  1   MPPSGTTASTVSDVYRPAALRLRGPTLFEPAEDS  34
+           MPPSGTTA T SDVYRPAALRLRGPTLFEPAEDS
+Sbjct  29  MPPSGTTAGTASDVYRPAALRLRGPTLFEPAEDS  62
+
+
+>gb|KDL20610.1| hypothetical protein AF38_03842 [Klebsiella pneumoniae MGH 52]
+Length=51
+
+ Score = 65.1 bits (157),  Expect = 7e-13, Method: Compositional matrix adjust.
+ Identities = 31/33 (94%), Positives = 31/33 (94%), Gaps = 0/33 (0%)
+
+Query  1   MPPSGTTASTVSDVYRPAALRLRGPTLFEPAED  33
+           MPPSGTTA TVSDVYRPAALRLRGPTLFEP ED
+Sbjct  15  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVED  47
+
+
+>ref|WP_023313840.1| hypothetical protein [Klebsiella pneumoniae]
+ gb|ESM33694.1| hypothetical protein L401_04732 [Klebsiella pneumoniae BWH 30]
+Length=85
+
+ Score = 65.5 bits (158),  Expect = 1e-12, Method: Compositional matrix adjust.
+ Identities = 31/33 (94%), Positives = 31/33 (94%), Gaps = 0/33 (0%)
+
+Query  1   MPPSGTTASTVSDVYRPAALRLRGPTLFEPAED  33
+           MPPSGTTA TVSDVYRPAALRLRGPTLFEP ED
+Sbjct  49  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVED  81
+
+
+>ref|WP_004200765.1| hypothetical protein [Klebsiella pneumoniae]
+ ref|YP_001338142.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
+pneumoniae MGH 78578]
+ ref|YP_005952625.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
+2242]
+ gb|ABR79875.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
+pneumoniae MGH 78578]
+ gb|AEJ96060.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
+2242]
+ emb|CCN27629.1| conservedd hypothetical protein [Klebsiella pneumoniae subsp. 
+pneumoniae Ecl8]
+ gb|EMH99904.1| hypothetical protein KPRYC492_23500 [Klebsiella pneumoniae RYC492]
+ gb|EMR16164.1| hypothetical protein G000_24765 [Klebsiella pneumoniae ATCC BAA-2146]
+ gb|EPA93308.1| hypothetical protein H237_4957 [Klebsiella pneumoniae UHKPC57]
+ gb|EPO20071.1| hypothetical protein H217_2806 [Klebsiella pneumoniae DMC0799]
+ gb|EPO88179.1| hypothetical protein H238_4863 [Klebsiella pneumoniae UHKPC179]
+ gb|ERE64450.1| hypothetical protein N036_06260 [Enterococcus gallinarum EGD-AAK12]
+ gb|ERN58216.1| hypothetical protein N598_19605 [Klebsiella pneumoniae 303K]
+ emb|CDK72402.1| hypothetical protein [Klebsiella pneumoniae IS22]
+Length=37
+
+ Score = 64.3 bits (155),  Expect = 1e-12, Method: Compositional matrix adjust.
+ Identities = 31/33 (94%), Positives = 31/33 (94%), Gaps = 0/33 (0%)
+
+Query  1   MPPSGTTASTVSDVYRPAALRLRGPTLFEPAED  33
+           MPPSGTTA TVSDVYRPAALRLRGPTLFEP ED
+Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVED  33
+
+
+  Database: All non-redundant GenBank CDS translations+PDB+SwissProt+PIR+PRF
+excluding environmental samples from WGS projects
+    Posted date:  Jun 2, 2014  4:14 PM
+  Number of letters in database: 14,304,329,268
+  Number of sequences in database:  39,757,572
+
+Lambda      K        H
+   0.328    0.139    0.429 
+Gapped
+Lambda      K        H
+   0.267   0.0410    0.140 
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Sequences: 39757572
+Number of Hits to DB: 94748878
+Number of extensions: 1733494
+Number of successful extensions: 4805
+Number of sequences better than 100: 9
+Number of HSP's better than 100 without gapping: 0
+Number of HSP's gapped: 4805
+Number of HSP's successfully gapped: 10
+Length of query: 35
+Length of database: 14304329268
+Length adjustment: 9
+Effective length of query: 26
+Effective length of database: 13946511120
+Effective search space: 362609289120
+Effective search space used: 362609289120
+T: 11
+A: 40
+X1: 15 (7.1 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 40 (20.0 bits)
+S2: 71 (32.0 bits)
+ka-blk-alpha gapped: 1.9
+ka-blk-alpha ungapped: 0.7916
+ka-blk-alpha_v gapped: 42.6028
+ka-blk-alpha_v ungapped: 4.96466
+ka-blk-sigma gapped: 43.6362
+
+
+
+

@@ -1,0 +1,162 @@
+<p><!--
+QBlastInfoBegin
+	Status=READY
+QBlastInfoEnd
+--><p>
+<PRE>
+BLASTP 2.2.29+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+Reference for compositional score matrix adjustment: Stephen
+F. Altschul, John C. Wootton, E. Michael Gertz, Richa
+Agarwala, Aleksandr Morgulis, Alejandro A. Schaffer, and
+Yi-Kuo Yu (2005) "Protein database searches using
+compositionally adjusted substitution matrices", FEBS J.
+272:5101-5109.
+
+
+RID: T02ZNX5K01R
+
+
+Database: All non-redundant GenBank CDS
+translations+PDB+SwissProt+PIR+PRF excluding environmental samples
+from WGS projects
+           40,910,947 sequences; 14,639,572,021 total letters
+Query= 
+Length=38
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                       (Bits)  Value
+
+ref|WP_019724920.1|  hypothetical protein [Klebsiella pneumoniae]  71.2    3e-15
+gb|KDL20610.1|  hypothetical protein AF38_03842 [Klebsiella pn...  70.5    7e-15
+ref|WP_023313840.1|  hypothetical protein [Klebsiella pneumoniae]  71.2    7e-15
+ref|WP_004200765.1|  hypothetical protein [Klebsiella pneumoniae]  70.1    7e-15
+gb|KDL31725.1|  hypothetical protein AF50_04499 [Klebsiella pn...  70.1    8e-15
+
+ALIGNMENTS
+>ref|WP_019724920.1| hypothetical protein [Klebsiella pneumoniae]
+Length=37
+
+ Score = 71.2 bits (173),  Expect = 3e-15, Method: Compositional matrix adjust.
+ Identities = 35/37 (95%), Positives = 35/37 (95%), Gaps = 0/37 (0%)
+
+Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
+           MPPSGTTAGTASDVYRPAALRLRGPTLFE  EDPQAG
+Sbjct  1   MPPSGTTAGTASDVYRPAALRLRGPTLFEPVEDPQAG  37
+
+
+>gb|KDL20610.1| hypothetical protein AF38_03842 [Klebsiella pneumoniae MGH 52]
+Length=51
+
+ Score = 70.5 bits (171),  Expect = 7e-15, Method: Compositional matrix adjust.
+ Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
+
+Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
+           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
+Sbjct  15  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  51
+
+
+>ref|WP_023313840.1| hypothetical protein [Klebsiella pneumoniae]
+ gb|ESM33694.1| hypothetical protein L401_04732 [Klebsiella pneumoniae BWH 30]
+Length=85
+
+ Score = 71.2 bits (173),  Expect = 7e-15, Method: Compositional matrix adjust.
+ Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
+
+Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
+           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
+Sbjct  49  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  85
+
+
+>ref|WP_004200765.1| hypothetical protein [Klebsiella pneumoniae]
+ ref|YP_001338142.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
+pneumoniae MGH 78578]
+ ref|YP_005952625.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
+2242]
+ gb|ABR79875.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
+pneumoniae MGH 78578]
+ gb|AEJ96060.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
+2242]
+ emb|CCN27629.1| conservedd hypothetical protein [Klebsiella pneumoniae subsp. 
+pneumoniae Ecl8]
+ gb|EMH99904.1| hypothetical protein KPRYC492_23500 [Klebsiella pneumoniae RYC492]
+ gb|EMR16164.1| hypothetical protein G000_24765 [Klebsiella pneumoniae ATCC BAA-2146]
+ gb|EPA93308.1| hypothetical protein H237_4957 [Klebsiella pneumoniae UHKPC57]
+ gb|EPO20071.1| hypothetical protein H217_2806 [Klebsiella pneumoniae DMC0799]
+ gb|EPO88179.1| hypothetical protein H238_4863 [Klebsiella pneumoniae UHKPC179]
+ gb|ERE64450.1| hypothetical protein N036_06260 [Enterococcus gallinarum EGD-AAK12]
+ gb|ERN58216.1| hypothetical protein N598_19605 [Klebsiella pneumoniae 303K]
+ emb|CDK72402.1| hypothetical protein [Klebsiella pneumoniae IS22]
+Length=37
+
+ Score = 70.1 bits (170),  Expect = 7e-15, Method: Compositional matrix adjust.
+ Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
+
+Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
+           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
+Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  37
+
+
+>gb|KDL31725.1| hypothetical protein AF50_04499, partial [Klebsiella pneumoniae 
+MGH 64]
+Length=43
+
+ Score = 70.1 bits (170),  Expect = 8e-15, Method: Compositional matrix adjust.
+ Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
+
+Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
+           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
+Sbjct  7   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  43
+
+
+  Database: All non-redundant GenBank CDS translations+PDB+SwissProt+PIR+PRF
+excluding environmental samples from WGS projects
+    Posted date:  Jun 2, 2014  4:14 PM
+  Number of letters in database: 14,304,329,268
+  Number of sequences in database:  39,757,572
+
+Lambda      K        H
+   0.325    0.139    0.430 
+Gapped
+Lambda      K        H
+   0.267   0.0410    0.140 
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Sequences: 39757572
+Number of Hits to DB: 105225350
+Number of extensions: 2076175
+Number of successful extensions: 6523
+Number of sequences better than 100: 16
+Number of HSP's better than 100 without gapping: 0
+Number of HSP's gapped: 6523
+Number of HSP's successfully gapped: 16
+Length of query: 38
+Length of database: 14304329268
+Length adjustment: 12
+Effective length of query: 26
+Effective length of database: 13827238404
+Effective search space: 359508198504
+Effective search space used: 359508198504
+T: 11
+A: 40
+X1: 15 (7.0 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 40 (20.0 bits)
+S2: 71 (32.0 bits)
+ka-blk-alpha gapped: 1.9
+ka-blk-alpha ungapped: 0.7916
+ka-blk-alpha_v gapped: 42.6028
+ka-blk-alpha_v ungapped: 4.96466
+ka-blk-sigma gapped: 43.6362
+
+
+
+

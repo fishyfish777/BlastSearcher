@@ -56,6 +56,7 @@ public class Main {
 					}
 					Thread.sleep(3000);
 				}
+				//Create threads
 				List<Thread> threads = new ArrayList<Thread>();
 				for (int i = 0; i < searchers.size(); i++) {
 					Thread.sleep(3000);
