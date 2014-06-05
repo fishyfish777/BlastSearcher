@@ -1,162 +1,136 @@
-<p><!--
-QBlastInfoBegin
-	Status=READY
-QBlastInfoEnd
---><p>
-<PRE>
-BLASTP 2.2.29+
-Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
-A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
-David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
-generation of protein database search programs", Nucleic
-Acids Res. 25:3389-3402.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="jig" content="ncbitoggler"/>
+<meta name="ncbitoggler" content="animation:'none'"/>
+<title>NCBI Blast:</title>
+<script type="text/javascript" src="/core/jig/1.13/js/jig.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/blastRes.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+<![endif]-->
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/results.js"></script>
+</head>
 
+<body id="type-a" class="noToggleCheck" >
+<div id="wrap">
+			<div id="header">	    
+		<div id="site-name"><a id="logolink" href="http://www.ncbi.nlm.nih.gov" title="NCBI Home Page"><img src="css/images/helix.gif" alt="NCBI Logo" title="Link to NCBI Home Page" /></a>BLAST <span id="trdm"> &reg;</span><h1 class="desc">Basic Local Alignment Search Tool</h1>
+		</div>
+		<div id="search">
+		
+<div>
+<script language="JavaScript" type="text/javascript"><!--
+// --></script><table class="medium1" style="border:2px solid #336699;" cellpadding="2" cellspacing="0" id="myncbi_off"><tr><td
+bgcolor="#336699" align="left"><a href="http://www.ncbi.nlm.nih.gov/myncbi/?"><font color="#FFFFFF"><b>My NCBI</b></font></a></td><td
+bgcolor="#336699" align="right"><a href="http://www.ncbi.nlm.nih.gov/books/NBK3842/" title="My NCBI help"><img border="0"
+src="http://www.ncbi.nlm.nih.gov/corehtml/query/MyNCBI/myncbihelpicon.gif" alt="My NCBI help" /></a></td></tr><tr><td colspan="2" nowrap="nowrap"><a
+href="http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFMPYA01R" title="Click to sign in"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFMPYA01R');return false;">[Sign In]</a> <a
+href="http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFMPYA01R" title="Click to register for an account"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFMPYA01R');return false;">[Register]</a></td></tr></table></div>
+		</div>
+		<a class="skp" href="#content-wrap">Jump to Page Content</a>		
+		<ul id="nav">
+                <li  class="first "><a href="Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastHome" title="BLAST Home">Home</a></li>
+                <li  class="recent "><a href="Blast.cgi?CMD=GetSaved&amp;RECENT_RESULTS=on" title="Unexpired BLAST jobs">Recent Results</a></li>                
+                <li  class="saved "><a href="Blast.cgi?CMD=GetSaved" title="Saved sets of BLAST search parameters">Saved Strategies</a></li>
+                <li  class= "last documentation "> <a href="Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs" title="BLAST documentation">Help</a></li>                
+                </ul>
+    </div>
 
-Reference for compositional score matrix adjustment: Stephen
-F. Altschul, John C. Wootton, E. Michael Gertz, Richa
-Agarwala, Aleksandr Morgulis, Alejandro A. Schaffer, and
-Yi-Kuo Yu (2005) "Protein database searches using
-compositionally adjusted substitution matrices", FEBS J.
-272:5101-5109.
+        <div id="content-wrap">
 
+                <div id="breadcrumb" class="inlineDiv">
+                   <a href="http://www.ncbi.nlm.nih.gov/">NCBI</a>/
+                   <a href="Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome">BLAST</a>/
+                   <a href="Blast.cgi?PAGE=Nucleotides&PROGRAM=blastn&PAGE_TYPE=BlastSearch&BLAST_SPEC=">blastn suite</a>/
+                   <strong>Formatting Results - T1HFMPYA01R</strong>             
+                </div>
+                <div class="inlineDiv resHeader">				   
+				   <a  id="frmPage"  class="WAITING" href="#" submitForm="reformat">[Formatting options] </a>                   
+                </div>
+                <h3 id="jtitle" >Job Title: </h3>
+								
+                <div id="content">                
+                <!--<ul id="msg" class="msg"><li class=""><p class=""></p><p class=""></p><p class=""></p></ul> -->
+                <ul id="msg" class="msg"><li class=""></li></ul>
+                <p><!--
+                QBlastInfoBegin
+	                Status=WAITING
+                QBlastInfoEnd
+                --></p> 
+                               
+                <SCRIPT LANGUAGE="JavaScript"><!--
+                    var tm = "2000";
+                    if (tm != "") {                    
+                        setTimeout('document.forms[0].submit();',tm);
+                    }
+                //--></SCRIPT>                                
+                <table id="statInfo" class="WAITING">
+                <tr><td>Request ID</td><td> <b>T1HFMPYA01R</b></td></tr>
+                <tr class="odd"><td>Status</td><td>Searching</td></tr>
+                <tr><td>Submitted at</td><td>Thu Jun  5 15:33:08 2014</td></tr>
+                <tr class="odd"><td>Current time</td><td>Thu Jun  5 15:33:12 2014</td></tr>
+                <tr><td>Time since submission</td><td>00:00:03</td></tr>
+                </table>
+                <p class="WAITING">This page will be automatically updated in <b>2</b> seconds</p>       
+                <form action="Blast.cgi" enctype="application/x-www-form-urlencoded" method="POST" id="results">
+                <input name="FORMAT_TYPE" type="hidden" value="Text"><input name="OLD_BLAST" type="hidden" value="false"><input name="RID" type="hidden" value="T1HFMPYA01R"><input name="SEARCH_DB_STATUS" type="hidden" value="15"><input name="USER_TYPE" type="hidden" value="2"><input name="_PGR" type="hidden" value="0">                
+                <input name="_PGR" type="hidden" value="0" >
+                <input name="CMD" type="hidden" value="Get">
+               
+                </form>
+                                
+				</div><!-- /#content -->
+				<form action="Blast.cgi" enctype="application/x-www-form-urlencoded"  method="post" name="reformat" id="reformat">				
+				   <input name="QUERY_INFO" type="hidden" value="" />    				
+				   <input name="ENTREZ_QUERY" type="hidden" value="" />
+                   <input name="CDD_RID" type="hidden" value="" />
+                   <input name="CDD_SEARCH_STATE" type="hidden" value="" />
+                   <input name="RID" type="hidden" value="T1HFMPYA01R" />
+				   <input name="STEP_NUMBER" type="hidden" value="" />
+				   <input name="CMD" type="hidden" value="Web"/>				
+				   <input NAME="PAGE_TYPE" type="hidden"  value="BlastFormatting"/>
+				
+				   <!-- TO DO: test all of those changes -->				   	
+				   <!-- Psi blast params  PSI_BLAST_PARAMS - commented- using forms[0] from fromatter> -->
+				   <!-- Current Formatting options FORMATTING_OPTIONS- commented- using forms[0] from fromatter> -->
+				   <!-- Current Search options CURR_SAVED_OPTIONS - commented- using forms[0] from fromatter> -->
+                 </form>				
+        </div><!-- /#content-wrap -->
 
-RID: T02ZNX5K01R
+		    	
+<div id="footer">
+   <div id="rgs">BLAST is a registered trademark of the National Library of Medicine.</div> 
+   <p id="orgns">
+      <a href="http://www.ncbi.nlm.nih.gov/" title="National Center for Biotechnology Information">NCBI</a> |
+      <a href="http://www.nlm.nih.gov/" title="National Library of Medicine">NLM</a> |
+      <a href="http://www.nih.gov/" title="National Institutes of Health">NIH</a> |
+      <a href="http://www.hhs.gov/" title="US Department of Health and Human Services">DHHS</a>
+   </p>
+   
+   <p>
+      <a href='http://www.ncbi.nlm.nih.gov/About/disclaimer.html'
+      title='NCBI intellectual property statement'>Copyright</a> | 
+      <a href='http://www.ncbi.nlm.nih.gov/About/disclaimer.html#disclaimer'
+      title='About liability, endorsements, external links, pop-up advertisements'>Disclaimer</a> | 
+      <a href='http://www.nlm.nih.gov/privacy.html'
+      title='NLM privacy policy'>Privacy</a> | 
+      <a href='http://www.nlm.nih.gov/accessibility.html'
+      title='About using NCBI resources with assistive technology'>Accessibility</a> |
+      <a href='http://www.ncbi.nlm.nih.gov/About/glance/contact_info.html'
+      title='How to get help, submit data, or provide feedback'>Contact</a> |
+      <a href='http://www.ncbi.nlm.nih.gov/sites/ehelp/feedback?Ncbi_App=blast'
+      title='How to get help, submit data, or provide feedback'>Send feedback</a>      
+   </p>
+</div>	
+   </div><!--/#wrap-->
+</body>
 
-
-Database: All non-redundant GenBank CDS
-translations+PDB+SwissProt+PIR+PRF excluding environmental samples
-from WGS projects
-           40,910,947 sequences; 14,639,572,021 total letters
-Query= 
-Length=38
-
-
-                                                                   Score     E
-Sequences producing significant alignments:                       (Bits)  Value
-
-ref|WP_019724920.1|  hypothetical protein [Klebsiella pneumoniae]  71.2    3e-15
-gb|KDL20610.1|  hypothetical protein AF38_03842 [Klebsiella pn...  70.5    7e-15
-ref|WP_023313840.1|  hypothetical protein [Klebsiella pneumoniae]  71.2    7e-15
-ref|WP_004200765.1|  hypothetical protein [Klebsiella pneumoniae]  70.1    7e-15
-gb|KDL31725.1|  hypothetical protein AF50_04499 [Klebsiella pn...  70.1    8e-15
-
-ALIGNMENTS
->ref|WP_019724920.1| hypothetical protein [Klebsiella pneumoniae]
-Length=37
-
- Score = 71.2 bits (173),  Expect = 3e-15, Method: Compositional matrix adjust.
- Identities = 35/37 (95%), Positives = 35/37 (95%), Gaps = 0/37 (0%)
-
-Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
-           MPPSGTTAGTASDVYRPAALRLRGPTLFE  EDPQAG
-Sbjct  1   MPPSGTTAGTASDVYRPAALRLRGPTLFEPVEDPQAG  37
-
-
->gb|KDL20610.1| hypothetical protein AF38_03842 [Klebsiella pneumoniae MGH 52]
-Length=51
-
- Score = 70.5 bits (171),  Expect = 7e-15, Method: Compositional matrix adjust.
- Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
-
-Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
-           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
-Sbjct  15  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  51
-
-
->ref|WP_023313840.1| hypothetical protein [Klebsiella pneumoniae]
- gb|ESM33694.1| hypothetical protein L401_04732 [Klebsiella pneumoniae BWH 30]
-Length=85
-
- Score = 71.2 bits (173),  Expect = 7e-15, Method: Compositional matrix adjust.
- Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
-
-Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
-           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
-Sbjct  49  MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  85
-
-
->ref|WP_004200765.1| hypothetical protein [Klebsiella pneumoniae]
- ref|YP_001338142.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
-pneumoniae MGH 78578]
- ref|YP_005952625.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
-2242]
- gb|ABR79875.1| hypothetical protein KPN_04520 [Klebsiella pneumoniae subsp. 
-pneumoniae MGH 78578]
- gb|AEJ96060.1| hypothetical protein KPN2242_00675 [Klebsiella pneumoniae KCTC 
-2242]
- emb|CCN27629.1| conservedd hypothetical protein [Klebsiella pneumoniae subsp. 
-pneumoniae Ecl8]
- gb|EMH99904.1| hypothetical protein KPRYC492_23500 [Klebsiella pneumoniae RYC492]
- gb|EMR16164.1| hypothetical protein G000_24765 [Klebsiella pneumoniae ATCC BAA-2146]
- gb|EPA93308.1| hypothetical protein H237_4957 [Klebsiella pneumoniae UHKPC57]
- gb|EPO20071.1| hypothetical protein H217_2806 [Klebsiella pneumoniae DMC0799]
- gb|EPO88179.1| hypothetical protein H238_4863 [Klebsiella pneumoniae UHKPC179]
- gb|ERE64450.1| hypothetical protein N036_06260 [Enterococcus gallinarum EGD-AAK12]
- gb|ERN58216.1| hypothetical protein N598_19605 [Klebsiella pneumoniae 303K]
- emb|CDK72402.1| hypothetical protein [Klebsiella pneumoniae IS22]
-Length=37
-
- Score = 70.1 bits (170),  Expect = 7e-15, Method: Compositional matrix adjust.
- Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
-
-Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
-           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
-Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  37
-
-
->gb|KDL31725.1| hypothetical protein AF50_04499, partial [Klebsiella pneumoniae 
-MGH 64]
-Length=43
-
- Score = 70.1 bits (170),  Expect = 8e-15, Method: Compositional matrix adjust.
- Identities = 34/37 (92%), Positives = 34/37 (92%), Gaps = 0/37 (0%)
-
-Query  1   MPPSGTTAGTASDVYRPAALRLRGPTLFESAEDPQAG  37
-           MPPSGTTAGT SDVYRPAALRLRGPTLFE  EDPQAG
-Sbjct  7   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVEDPQAG  43
-
-
-  Database: All non-redundant GenBank CDS translations+PDB+SwissProt+PIR+PRF
-excluding environmental samples from WGS projects
-    Posted date:  Jun 2, 2014  4:14 PM
-  Number of letters in database: 14,304,329,268
-  Number of sequences in database:  39,757,572
-
-Lambda      K        H
-   0.325    0.139    0.430 
-Gapped
-Lambda      K        H
-   0.267   0.0410    0.140 
-Matrix: BLOSUM62
-Gap Penalties: Existence: 11, Extension: 1
-Number of Sequences: 39757572
-Number of Hits to DB: 105225350
-Number of extensions: 2076175
-Number of successful extensions: 6523
-Number of sequences better than 100: 16
-Number of HSP's better than 100 without gapping: 0
-Number of HSP's gapped: 6523
-Number of HSP's successfully gapped: 16
-Length of query: 38
-Length of database: 14304329268
-Length adjustment: 12
-Effective length of query: 26
-Effective length of database: 13827238404
-Effective search space: 359508198504
-Effective search space used: 359508198504
-T: 11
-A: 40
-X1: 15 (7.0 bits)
-X2: 38 (14.6 bits)
-X3: 64 (24.7 bits)
-S1: 40 (20.0 bits)
-S2: 71 (32.0 bits)
-ka-blk-alpha gapped: 1.9
-ka-blk-alpha ungapped: 0.7916
-ka-blk-alpha_v gapped: 42.6028
-ka-blk-alpha_v ungapped: 4.96466
-ka-blk-sigma gapped: 43.6362
-
-
-
+</html>
 

@@ -25,6 +25,7 @@ public class Main {
 			String tempSequenceID;
 			String tempquery;
 			List<Searcher> searchers = new ArrayList<Searcher>();
+			List<Thread> threads = new ArrayList<Thread>();
 			int searcherID = 0;
 			try {
 				readFile = new Scanner(selectedFile);
@@ -50,19 +51,20 @@ public class Main {
 						if (tempbuffer.contains("*")) {
 							tempquery += tempbuffer;
 						}
-
+						//At this point, the query, sequence ID and ID are built
 						searchers.add(new Searcher(tempSequenceID, tempquery,
 								searcherID));
+						threads.add(searchers.get(searcherID-1));
+						Thread.sleep(3000);
+						threads.get(searcherID-1).start();
+						while (ProgressTracker.count() >= 50)
+						{
+							System.out.println("Thread limit reached, waiting for current threads...");
+							Thread.sleep(60000);
+						}
 					}
-					Thread.sleep(3000);
 				}
-				//Create threads
-				List<Thread> threads = new ArrayList<Thread>();
-				for (int i = 0; i < searchers.size(); i++) {
-					Thread.sleep(3000);
-					threads.add(searchers.get(i));
-					threads.get(i).start();
-				}
+				// Create threads
 				readFile.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block

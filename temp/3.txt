@@ -1,156 +1,136 @@
-<p><!--
-QBlastInfoBegin
-	Status=READY
-QBlastInfoEnd
---><p>
-<PRE>
-BLASTP 2.2.29+
-Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
-A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
-David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
-generation of protein database search programs", Nucleic
-Acids Res. 25:3389-3402.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="jig" content="ncbitoggler"/>
+<meta name="ncbitoggler" content="animation:'none'"/>
+<title>NCBI Blast:</title>
+<script type="text/javascript" src="/core/jig/1.13/js/jig.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/blastRes.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="css/ie6_or_less.css" />
+<![endif]-->
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/results.js"></script>
+</head>
 
+<body id="type-a" class="noToggleCheck" >
+<div id="wrap">
+			<div id="header">	    
+		<div id="site-name"><a id="logolink" href="http://www.ncbi.nlm.nih.gov" title="NCBI Home Page"><img src="css/images/helix.gif" alt="NCBI Logo" title="Link to NCBI Home Page" /></a>BLAST <span id="trdm"> &reg;</span><h1 class="desc">Basic Local Alignment Search Tool</h1>
+		</div>
+		<div id="search">
+		
+<div>
+<script language="JavaScript" type="text/javascript"><!--
+// --></script><table class="medium1" style="border:2px solid #336699;" cellpadding="2" cellspacing="0" id="myncbi_off"><tr><td
+bgcolor="#336699" align="left"><a href="http://www.ncbi.nlm.nih.gov/myncbi/?"><font color="#FFFFFF"><b>My NCBI</b></font></a></td><td
+bgcolor="#336699" align="right"><a href="http://www.ncbi.nlm.nih.gov/books/NBK3842/" title="My NCBI help"><img border="0"
+src="http://www.ncbi.nlm.nih.gov/corehtml/query/MyNCBI/myncbihelpicon.gif" alt="My NCBI help" /></a></td></tr><tr><td colspan="2" nowrap="nowrap"><a
+href="http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFSP3T01R" title="Click to sign in"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFSP3T01R');return false;">[Sign In]</a> <a
+href="http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFSP3T01R" title="Click to register for an account"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT1HFSP3T01R');return false;">[Register]</a></td></tr></table></div>
+		</div>
+		<a class="skp" href="#content-wrap">Jump to Page Content</a>		
+		<ul id="nav">
+                <li  class="first "><a href="Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastHome" title="BLAST Home">Home</a></li>
+                <li  class="recent "><a href="Blast.cgi?CMD=GetSaved&amp;RECENT_RESULTS=on" title="Unexpired BLAST jobs">Recent Results</a></li>                
+                <li  class="saved "><a href="Blast.cgi?CMD=GetSaved" title="Saved sets of BLAST search parameters">Saved Strategies</a></li>
+                <li  class= "last documentation "> <a href="Blast.cgi?CMD=Web&amp;PAGE_TYPE=BlastDocs" title="BLAST documentation">Help</a></li>                
+                </ul>
+    </div>
 
-Reference for compositional score matrix adjustment: Stephen
-F. Altschul, John C. Wootton, E. Michael Gertz, Richa
-Agarwala, Aleksandr Morgulis, Alejandro A. Schaffer, and
-Yi-Kuo Yu (2005) "Protein database searches using
-compositionally adjusted substitution matrices", FEBS J.
-272:5101-5109.
+        <div id="content-wrap">
 
+                <div id="breadcrumb" class="inlineDiv">
+                   <a href="http://www.ncbi.nlm.nih.gov/">NCBI</a>/
+                   <a href="Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome">BLAST</a>/
+                   <a href="Blast.cgi?PAGE=Nucleotides&PROGRAM=blastn&PAGE_TYPE=BlastSearch&BLAST_SPEC=">blastn suite</a>/
+                   <strong>Formatting Results - T1HFSP3T01R</strong>             
+                </div>
+                <div class="inlineDiv resHeader">				   
+				   <a  id="frmPage"  class="WAITING" href="#" submitForm="reformat">[Formatting options] </a>                   
+                </div>
+                <h3 id="jtitle" >Job Title: </h3>
+								
+                <div id="content">                
+                <!--<ul id="msg" class="msg"><li class=""><p class=""></p><p class=""></p><p class=""></p></ul> -->
+                <ul id="msg" class="msg"><li class=""></li></ul>
+                <p><!--
+                QBlastInfoBegin
+	                Status=WAITING
+                QBlastInfoEnd
+                --></p> 
+                               
+                <SCRIPT LANGUAGE="JavaScript"><!--
+                    var tm = "2000";
+                    if (tm != "") {                    
+                        setTimeout('document.forms[0].submit();',tm);
+                    }
+                //--></SCRIPT>                                
+                <table id="statInfo" class="WAITING">
+                <tr><td>Request ID</td><td> <b>T1HFSP3T01R</b></td></tr>
+                <tr class="odd"><td>Status</td><td>Searching</td></tr>
+                <tr><td>Submitted at</td><td>Thu Jun  5 15:33:12 2014</td></tr>
+                <tr class="odd"><td>Current time</td><td>Thu Jun  5 15:33:17 2014</td></tr>
+                <tr><td>Time since submission</td><td>00:00:03</td></tr>
+                </table>
+                <p class="WAITING">This page will be automatically updated in <b>2</b> seconds</p>       
+                <form action="Blast.cgi" enctype="application/x-www-form-urlencoded" method="POST" id="results">
+                <input name="FORMAT_TYPE" type="hidden" value="Text"><input name="OLD_BLAST" type="hidden" value="false"><input name="RID" type="hidden" value="T1HFSP3T01R"><input name="SEARCH_DB_STATUS" type="hidden" value="15"><input name="USER_TYPE" type="hidden" value="2"><input name="_PGR" type="hidden" value="0">                
+                <input name="_PGR" type="hidden" value="0" >
+                <input name="CMD" type="hidden" value="Get">
+               
+                </form>
+                                
+				</div><!-- /#content -->
+				<form action="Blast.cgi" enctype="application/x-www-form-urlencoded"  method="post" name="reformat" id="reformat">				
+				   <input name="QUERY_INFO" type="hidden" value="" />    				
+				   <input name="ENTREZ_QUERY" type="hidden" value="" />
+                   <input name="CDD_RID" type="hidden" value="" />
+                   <input name="CDD_SEARCH_STATE" type="hidden" value="" />
+                   <input name="RID" type="hidden" value="T1HFSP3T01R" />
+				   <input name="STEP_NUMBER" type="hidden" value="" />
+				   <input name="CMD" type="hidden" value="Web"/>				
+				   <input NAME="PAGE_TYPE" type="hidden"  value="BlastFormatting"/>
+				
+				   <!-- TO DO: test all of those changes -->				   	
+				   <!-- Psi blast params  PSI_BLAST_PARAMS - commented- using forms[0] from fromatter> -->
+				   <!-- Current Formatting options FORMATTING_OPTIONS- commented- using forms[0] from fromatter> -->
+				   <!-- Current Search options CURR_SAVED_OPTIONS - commented- using forms[0] from fromatter> -->
+                 </form>				
+        </div><!-- /#content-wrap -->
 
-RID: T02ZWFT101R
+		    	
+<div id="footer">
+   <div id="rgs">BLAST is a registered trademark of the National Library of Medicine.</div> 
+   <p id="orgns">
+      <a href="http://www.ncbi.nlm.nih.gov/" title="National Center for Biotechnology Information">NCBI</a> |
+      <a href="http://www.nlm.nih.gov/" title="National Library of Medicine">NLM</a> |
+      <a href="http://www.nih.gov/" title="National Institutes of Health">NIH</a> |
+      <a href="http://www.hhs.gov/" title="US Department of Health and Human Services">DHHS</a>
+   </p>
+   
+   <p>
+      <a href='http://www.ncbi.nlm.nih.gov/About/disclaimer.html'
+      title='NCBI intellectual property statement'>Copyright</a> | 
+      <a href='http://www.ncbi.nlm.nih.gov/About/disclaimer.html#disclaimer'
+      title='About liability, endorsements, external links, pop-up advertisements'>Disclaimer</a> | 
+      <a href='http://www.nlm.nih.gov/privacy.html'
+      title='NLM privacy policy'>Privacy</a> | 
+      <a href='http://www.nlm.nih.gov/accessibility.html'
+      title='About using NCBI resources with assistive technology'>Accessibility</a> |
+      <a href='http://www.ncbi.nlm.nih.gov/About/glance/contact_info.html'
+      title='How to get help, submit data, or provide feedback'>Contact</a> |
+      <a href='http://www.ncbi.nlm.nih.gov/sites/ehelp/feedback?Ncbi_App=blast'
+      title='How to get help, submit data, or provide feedback'>Send feedback</a>      
+   </p>
+</div>	
+   </div><!--/#wrap-->
+</body>
 
-
-Database: All non-redundant GenBank CDS
-translations+PDB+SwissProt+PIR+PRF excluding environmental samples
-from WGS projects
-           40,910,947 sequences; 14,639,572,021 total letters
-Query= 
-Length=35
-
-
-                                                                   Score     E
-Sequences producing significant alignments:                       (Bits)  Value
-
-ref|WP_012737191.1|  hypothetical protein [Klebsiella pneumoniae]  59.3    1e-10
-ref|WP_012737190.1|  hypothetical protein [Klebsiella pneumoniae]  58.9    2e-10
-ref|WP_004872829.1|  hypothetical protein [Klebsiella pneumoniae]  58.9    3e-10
-ref|WP_012737192.1|  hypothetical protein [Klebsiella pneumoniae]  57.4    6e-10
-ref|WP_019724920.1|  hypothetical protein [Klebsiella pneumoniae]  57.0    7e-10
-
-ALIGNMENTS
->ref|WP_012737191.1| hypothetical protein [Klebsiella pneumoniae]
- ref|YP_002917343.1| hypothetical protein KP1_0388 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
- dbj|BAH61276.1| hypothetical protein KP1_0388 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
-Length=34
-
- Score = 59.3 bits (142),  Expect = 1e-10, Method: Compositional matrix adjust.
- Identities = 29/34 (85%), Positives = 30/34 (88%), Gaps = 0/34 (0%)
-
-Query  1   MPPSGTTTGTPSDVYRPASLRLRGPTLFEPAGGP  34
-           MPPSGTT GT SDVYRPA+L LRGP LFEPAGGP
-Sbjct  1   MPPSGTTAGTVSDVYRPAALHLRGPALFEPAGGP  34
-
-
->ref|WP_012737190.1| hypothetical protein [Klebsiella pneumoniae]
- ref|YP_002917342.1| hypothetical protein KP1_0387 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
- dbj|BAH61275.1| hypothetical protein KP1_0387 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
-Length=34
-
- Score = 58.9 bits (141),  Expect = 2e-10, Method: Compositional matrix adjust.
- Identities = 29/34 (85%), Positives = 30/34 (88%), Gaps = 0/34 (0%)
-
-Query  1   MPPSGTTTGTPSDVYRPASLRLRGPTLFEPAGGP  34
-           MPPSGTT GT SDVYRPA+LRLRGPTLFEP G P
-Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPVGDP  34
-
-
->ref|WP_004872829.1| hypothetical protein [Klebsiella pneumoniae]
- gb|EEW38391.1| hypothetical protein HMPREF0484_5491 [Klebsiella pneumoniae subsp. 
-rhinoscleromatis ATCC 13884]
-Length=62
-
- Score = 58.9 bits (141),  Expect = 3e-10, Method: Compositional matrix adjust.
- Identities = 28/31 (90%), Positives = 29/31 (94%), Gaps = 0/31 (0%)
-
-Query  1   MPPSGTTTGTPSDVYRPASLRLRGPTLFEPA  31
-           MPPSGTT GT SDVYRPA+LRLRGPTLFEPA
-Sbjct  29  MPPSGTTAGTASDVYRPAALRLRGPTLFEPA  59
-
-
->ref|WP_012737192.1| hypothetical protein [Klebsiella pneumoniae]
- ref|YP_002917344.1| hypothetical protein KP1_0389 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
- dbj|BAH61277.1| hypothetical protein KP1_0389 [Klebsiella pneumoniae subsp. pneumoniae 
-NTUH-K2044]
-Length=34
-
- Score = 57.4 bits (137),  Expect = 6e-10, Method: Compositional matrix adjust.
- Identities = 28/31 (90%), Positives = 29/31 (94%), Gaps = 0/31 (0%)
-
-Query  1   MPPSGTTTGTPSDVYRPASLRLRGPTLFEPA  31
-           MPPSGTT GT SDVYRPA+LRLRGPTLFEPA
-Sbjct  1   MPPSGTTAGTVSDVYRPAALRLRGPTLFEPA  31
-
-
->ref|WP_019724920.1| hypothetical protein [Klebsiella pneumoniae]
-Length=37
-
- Score = 57.0 bits (136),  Expect = 7e-10, Method: Compositional matrix adjust.
- Identities = 28/34 (82%), Positives = 29/34 (85%), Gaps = 0/34 (0%)
-
-Query  1   MPPSGTTTGTPSDVYRPASLRLRGPTLFEPAGGP  34
-           MPPSGTT GT SDVYRPA+LRLRGPTLFEP   P
-Sbjct  1   MPPSGTTAGTASDVYRPAALRLRGPTLFEPVEDP  34
-
-
-  Database: All non-redundant GenBank CDS translations+PDB+SwissProt+PIR+PRF
-excluding environmental samples from WGS projects
-    Posted date:  Jun 2, 2014  4:14 PM
-  Number of letters in database: 14,304,329,268
-  Number of sequences in database:  39,757,572
-
-Lambda      K        H
-   0.326    0.147    0.488 
-Gapped
-Lambda      K        H
-   0.267   0.0410    0.140 
-Matrix: BLOSUM62
-Gap Penalties: Existence: 11, Extension: 1
-Number of Sequences: 39757572
-Number of Hits to DB: 118595815
-Number of extensions: 3467607
-Number of successful extensions: 8898
-Number of sequences better than 100: 38
-Number of HSP's better than 100 without gapping: 0
-Number of HSP's gapped: 8897
-Number of HSP's successfully gapped: 42
-Length of query: 35
-Length of database: 14304329268
-Length adjustment: 9
-Effective length of query: 26
-Effective length of database: 13946511120
-Effective search space: 362609289120
-Effective search space used: 362609289120
-T: 11
-A: 40
-X1: 15 (7.1 bits)
-X2: 38 (14.6 bits)
-X3: 64 (24.7 bits)
-S1: 40 (20.0 bits)
-S2: 71 (32.0 bits)
-ka-blk-alpha gapped: 1.9
-ka-blk-alpha ungapped: 0.7916
-ka-blk-alpha_v gapped: 42.6028
-ka-blk-alpha_v ungapped: 4.96466
-ka-blk-sigma gapped: 43.6362
-
-
-
+</html>
 

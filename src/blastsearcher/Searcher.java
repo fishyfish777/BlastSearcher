@@ -29,6 +29,7 @@ public class Searcher extends Thread {
 		 * to be called
 		 */
 
+		ProgressTracker.addToList();
 		name = sequenceID;
 		search = query;
 		ID = searcherID;
@@ -36,6 +37,7 @@ public class Searcher extends Thread {
 	}
 
 	public void run() {
+		System.out.println("Starting job " + name + " with request ID of " + requestID);
 		this.getRequest(requestID, ID + "");
 		this.write();
 	}
@@ -50,7 +52,7 @@ public class Searcher extends Thread {
 		// Build the URL
 		String url = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY="
 				+ query
-				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=5&CMD=Put&PROGRAM=blastp";
+				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=3&CMD=Put&PROGRAM=blastn&EMAIL=tsujinago%40gmail";
 		String requestID = "";
 
 		if (noUncultured) {
@@ -188,5 +190,53 @@ public class Searcher extends Thread {
 	}
 
 	public void write() {
+		String tempbuffer = "";
+		String[] tempbufferar;
+		String output = "";
+		int ctr = 0;
+		try {
+			System.out.println("Writing output for " + name + "with request ID of " + requestID);
+			Scanner readFile = new Scanner(new File("temp/" + ID + ".txt"));
+
+			while (readFile.hasNextLine()) {
+				if (readFile.nextLine().contains("ALIGNMENTS")) {
+					//Only filters for one result, for now
+					ctr++;
+					tempbuffer = readFile.nextLine();
+					if (tempbuffer.contains(">"))
+					{
+						output += name + "\t";
+						output += search + "\t";
+						output += tempbuffer.substring(1) + "\t";
+						while (!tempbuffer.contains("Expect = ") && readFile.hasNextLine())
+						{
+							tempbuffer = readFile.nextLine();
+							if (tempbuffer.contains("Expect = "))
+							{
+								tempbufferar = tempbuffer.split(",");
+								tempbufferar = tempbufferar[1].split("Expect = ");
+								output += tempbufferar[1] + "\t";
+								tempbuffer = readFile.nextLine();
+								tempbufferar = tempbuffer.split(",");
+								output += tempbufferar[0].substring((tempbufferar[0].indexOf("(")+1),tempbufferar[0].indexOf(")")) + "\t";
+								break;
+							}
+							
+						}
+					}
+				}
+			}
+			if (ctr == 0) {
+				output = "No results found for search " + name;
+			}
+			Filewriter.printToFile(output);
+			readFile.close();
+			ProgressTracker.completed();
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

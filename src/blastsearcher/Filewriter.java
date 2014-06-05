@@ -14,12 +14,15 @@ public class Filewriter {
 		try {
 			out = new PrintWriter(new BufferedWriter(new FileWriter(
 					"output.txt", true)));
-			out.print(input);
+			System.out.println("Wrote " + input + " to output.txt");
+			out.println(input);
 			out.flush();
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		//Output to ProgressTracker which ID has been written so that another ID can start
 	}
 }
