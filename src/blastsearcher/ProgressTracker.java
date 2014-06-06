@@ -1,21 +1,29 @@
 package blastsearcher;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ProgressTracker {
 	public static int counter = 0;
-	public static void addToList()
-	{
+	public static long access = 0;
+
+	public static void addToList() {
 		counter++;
 	}
-	public static void completed()
-	{
+
+	public static void completed() {
 		counter--;
 	}
-	public static int count()
-	{
+
+	public static int count() {
 		return counter;
 	}
 
+	public static boolean threeSecondsPassed() {
+		if (System.currentTimeMillis() - access <= 3000) {
+			return false;
+		} else {
+			//System.currentTimeMillis() - access > 3000
+			access = System.currentTimeMillis();
+			return true;
+		}
+	}
 }
+

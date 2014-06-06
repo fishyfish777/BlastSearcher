@@ -37,7 +37,6 @@ public class Searcher extends Thread {
 	}
 
 	public void run() {
-		System.out.println("Starting job " + name + " with request ID of " + requestID);
 		this.getRequest(requestID, ID + "");
 		this.write();
 	}
@@ -52,7 +51,7 @@ public class Searcher extends Thread {
 		// Build the URL
 		String url = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY="
 				+ query
-				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=3&CMD=Put&PROGRAM=blastn&EMAIL=tsujinago%40gmail";
+				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=3&CMD=Put&PROGRAM=blastp&EMAIL=tsujinago%40gmail";
 		String requestID = "";
 
 		if (noUncultured) {
@@ -63,6 +62,12 @@ public class Searcher extends Thread {
 		try {
 			this.downloadHTML("temp", (ID) + " request.html", url);
 			requestID = findRequestID("temp", (ID) + " request.html");
+			while (requestID.length() <= 3)
+			{
+				System.out.println("RequestID for job " + name + " blank, retrying");
+				this.downloadHTML("temp", (ID) + " request.html", url);
+				requestID = findRequestID("temp", (ID) + " request.html");
+			}
 			System.out.println(name + " Assigned a request ID of " + requestID);
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
@@ -153,15 +158,20 @@ public class Searcher extends Thread {
 		HttpGet httpGet = new HttpGet(url);
 		CloseableHttpResponse response = httpclient.execute(httpGet);
 		try {
+			while (!ProgressTracker.threeSecondsPassed()) {
+				Thread.sleep(100);
+			}
 			String tempresponse = response.getStatusLine().toString();
 			while (!tempresponse.contains("200")) {
+				while (!ProgressTracker.threeSecondsPassed()) {
+					Thread.sleep(100);
+				}
 				System.out.println("Web error - "
 						+ response.getStatusLine().toString() + ", retrying");
 				httpclient = HttpClients.createDefault();
 				httpGet = new HttpGet(url);
 				response = httpclient.execute(httpGet);
 				tempresponse = response.getStatusLine().toString();
-				Thread.sleep(5000);
 			}
 
 			HttpEntity entity1 = response.getEntity();
@@ -195,39 +205,42 @@ public class Searcher extends Thread {
 		String output = "";
 		int ctr = 0;
 		try {
-			System.out.println("Writing output for " + name + "with request ID of " + requestID);
+			System.out.println("Writing output for " + name
+					+ "with request ID of " + requestID);
 			Scanner readFile = new Scanner(new File("temp/" + ID + ".txt"));
 
 			while (readFile.hasNextLine()) {
 				if (readFile.nextLine().contains("ALIGNMENTS")) {
-					//Only filters for one result, for now
+					// Only filters for one result, for now
 					ctr++;
 					tempbuffer = readFile.nextLine();
-					if (tempbuffer.contains(">"))
-					{
+					if (tempbuffer.contains(">")) {
 						output += name + "\t";
 						output += search + "\t";
 						output += tempbuffer.substring(1) + "\t";
-						while (!tempbuffer.contains("Expect = ") && readFile.hasNextLine())
-						{
+						while (!tempbuffer.contains("Expect = ")
+								&& readFile.hasNextLine()) {
 							tempbuffer = readFile.nextLine();
-							if (tempbuffer.contains("Expect = "))
-							{
+							if (tempbuffer.contains("Expect = ")) {
 								tempbufferar = tempbuffer.split(",");
-								tempbufferar = tempbufferar[1].split("Expect = ");
+								tempbufferar = tempbufferar[1]
+										.split("Expect = ");
 								output += tempbufferar[1] + "\t";
 								tempbuffer = readFile.nextLine();
 								tempbufferar = tempbuffer.split(",");
-								output += tempbufferar[0].substring((tempbufferar[0].indexOf("(")+1),tempbufferar[0].indexOf(")")) + "\t";
+								output += tempbufferar[0].substring(
+										(tempbufferar[0].indexOf("(") + 1),
+										tempbufferar[0].indexOf(")"))
+										+ "\t";
 								break;
 							}
-							
+
 						}
 					}
 				}
 			}
 			if (ctr == 0) {
-				output = "No results found for search " + name;
+				output = name + "\t" + search + "\t" + "No Results Found!";
 			}
 			Filewriter.printToFile(output);
 			readFile.close();

@@ -51,15 +51,16 @@ public class Main {
 						if (tempbuffer.contains("*")) {
 							tempquery += tempbuffer;
 						}
-						//At this point, the query, sequence ID and ID are built
+						// At this point, the query, sequence ID and ID are
+						// built
 						searchers.add(new Searcher(tempSequenceID, tempquery,
 								searcherID));
-						threads.add(searchers.get(searcherID-1));
+						threads.add(searchers.get(searcherID - 1));
 						Thread.sleep(3000);
-						threads.get(searcherID-1).start();
-						while (ProgressTracker.count() >= 50)
-						{
-							System.out.println("Thread limit reached, waiting for current threads...");
+						threads.get(searcherID - 1).start();
+						while (ProgressTracker.count() >= 50) {
+							System.out
+									.println("Thread limit reached, waiting for current threads...");
 							Thread.sleep(60000);
 						}
 					}
