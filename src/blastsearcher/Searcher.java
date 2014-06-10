@@ -226,6 +226,8 @@ public class Searcher extends Thread {
 					ctr++;
 					tempbuffer = readFile.nextLine();
 					if (tempbuffer.contains(">")) {
+						output += ID + "\t";
+						output += requestID + "\t";
 						output += name + "\t";
 						output += search + "\t";
 						output += tempbuffer.substring(1) + "\t";

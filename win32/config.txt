@@ -1,0 +1,3 @@
+Threads (adding more threads may not make program faster, max 100): 30
+Exclude Uncultured (y/n): y
+Blast Version (blastn/blastp/blastx/tblastn/tblastx, only blastn and blastp tested): blastp
