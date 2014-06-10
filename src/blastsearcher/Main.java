@@ -18,13 +18,18 @@ public class Main {
 	public static boolean exclude_uncultured;
 
 	public static void main(String[] args) {
+		
+		//Adding my name so we know how2git
+		
 		/*
 		 * Scan a temporary config file If config file not found, create and
 		 * exit
 		 */
+		Scanner readConfig = null;
+		
 		try {
 			System.out.println("Reading from config.txt");
-			Scanner readConfig = new Scanner(new File("config.txt"));
+			readConfig = new Scanner(new File("config.txt"));
 			String configbuffer; String[] configbufferar;
 			while (readConfig.hasNextLine())
 			{
@@ -60,7 +65,6 @@ public class Main {
 			System.out.println("Threads: \"" + Main.threads +  "\"");
 			System.out.println("Program Version: \"" + Main.program_version +  "\"");
 			System.out.println("Exclude Uncultured: \"" + Main.exclude_uncultured +  "\"");
-			readConfig.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("Invalid config.txt, generating default and exiting:");
@@ -78,6 +82,9 @@ public class Main {
 				e1.printStackTrace();
 			}
 			System.exit(0);
+		}
+		finally {
+			readConfig.close();
 		}
 
 		/*

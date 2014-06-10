@@ -176,6 +176,9 @@ public class Searcher extends Thread {
 				}
 				System.out.println("Web error - "
 						+ response.getStatusLine().toString() + ", retrying");
+				
+				response.close();
+				
 				httpclient = HttpClients.createDefault();
 				httpGet = new HttpGet(url);
 				response = httpclient.execute(httpGet);
