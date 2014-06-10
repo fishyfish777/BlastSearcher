@@ -1,7 +1,11 @@
 package blastsearcher;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +13,73 @@ import java.util.Scanner;
 import javax.swing.JFileChooser;
 
 public class Main {
+	public static String program_version;
+	public static int threads;
+	public static boolean exclude_uncultured;
+
 	public static void main(String[] args) {
+		/*
+		 * Scan a temporary config file If config file not found, create and
+		 * exit
+		 */
+		try {
+			System.out.println("Reading from config.txt");
+			Scanner readConfig = new Scanner(new File("config.txt"));
+			String configbuffer; String[] configbufferar;
+			while (readConfig.hasNextLine())
+			{
+				configbuffer = readConfig.nextLine();
+				configbufferar = configbuffer.split(":");
+				configbufferar[1] = configbufferar[1].replaceAll("\\s+","");
+				if (configbufferar[0].contains("Threads"))
+				{
+					threads = Integer.parseInt(configbufferar[1]);
+				}
+				else if (configbufferar[0].contains("Exclude Uncultured"))
+				{
+					if (configbufferar[1].toLowerCase().contains("y"))
+					{
+						exclude_uncultured = true;
+					}
+					else if (configbufferar[1].toLowerCase().contains("n"))
+					{
+						exclude_uncultured = false;
+					}
+				}
+				else if (configbufferar[0].contains("Blast Version"))
+				{
+					program_version = configbufferar[1].toLowerCase();
+				}
+				else
+				{
+					System.out.println("Error in config.txt!");
+					throw new FileNotFoundException();
+				}
+			}
+			System.out.println("Initialized with:");
+			System.out.println("Threads: \"" + Main.threads +  "\"");
+			System.out.println("Program Version: \"" + Main.program_version +  "\"");
+			System.out.println("Exclude Uncultured: \"" + Main.exclude_uncultured +  "\"");
+			readConfig.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("Invalid config.txt, generating default and exiting:");
+			PrintWriter configout;
+			try {
+				configout = new PrintWriter(new BufferedWriter(new FileWriter(
+						"config.txt")));
+				configout.println("Threads (adding more threads may not make program faster, max 100): 20");
+				configout.println("Exclude Uncultured (y/n): y");
+				configout.println("Blast Version (blastn/blastp/blastx/tblastn/tblastx, only blastn and blastp tested): blastp");
+				configout.flush();
+				configout.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			System.exit(0);
+		}
+
 		/*
 		 * Scan through the fasta file and create Searcher objects at 3-second
 		 * intervals
@@ -58,7 +128,7 @@ public class Main {
 						threads.add(searchers.get(searcherID - 1));
 						Thread.sleep(3000);
 						threads.get(searcherID - 1).start();
-						while (ProgressTracker.count() >= 50) {
+						while (ProgressTracker.count() >= Main.threads) {
 							System.out
 									.println("Thread limit reached, waiting for current threads...");
 							Thread.sleep(60000);
