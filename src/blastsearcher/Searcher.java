@@ -33,7 +33,7 @@ public class Searcher extends Thread {
 		name = sequenceID;
 		search = query;
 		ID = searcherID;
-		requestID = this.postRequest(search, true);
+		requestID = this.postRequest(search, Main.exclude_uncultured);
 	}
 
 	public void run() {
@@ -51,7 +51,7 @@ public class Searcher extends Thread {
 		// Build the URL
 		String url = "http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY="
 				+ query
-				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=3&CMD=Put&PROGRAM=blastp&EMAIL=tsujinago%40gmail";
+				+ "&DATABASE=nr&NCBI_GI=on&HITLIST_SIZE=3&CMD=Put&PROGRAM=" + Main.program_version + "&EMAIL=tsujinago%40gmail";
 		String requestID = "";
 
 		if (noUncultured) {
@@ -59,14 +59,22 @@ public class Searcher extends Thread {
 		}
 
 		// Download the file temporarily and then parse it
+		int i = 0;
 		try {
 			this.downloadHTML("temp", (ID) + " request.html", url);
 			requestID = findRequestID("temp", (ID) + " request.html");
 			while (requestID.length() <= 3)
 			{
+				i++;
 				System.out.println("RequestID for job " + name + " blank, retrying");
 				this.downloadHTML("temp", (ID) + " request.html", url);
 				requestID = findRequestID("temp", (ID) + " request.html");
+				if (i >= 3)
+				{
+					Filewriter.printToFile(name + "\t" + query + "\t" + "RequestID could not be obtained");
+					ProgressTracker.completed();
+					break;
+				}
 			}
 			System.out.println(name + " Assigned a request ID of " + requestID);
 		} catch (ClientProtocolException e) {
@@ -206,7 +214,7 @@ public class Searcher extends Thread {
 		int ctr = 0;
 		try {
 			System.out.println("Writing output for " + name
-					+ "with request ID of " + requestID);
+					+ " with request ID of " + requestID);
 			Scanner readFile = new Scanner(new File("temp/" + ID + ".txt"));
 
 			while (readFile.hasNextLine()) {

@@ -29,10 +29,10 @@
 bgcolor="#336699" align="left"><a href="http://www.ncbi.nlm.nih.gov/myncbi/?"><font color="#FFFFFF"><b>My NCBI</b></font></a></td><td
 bgcolor="#336699" align="right"><a href="http://www.ncbi.nlm.nih.gov/books/NBK3842/" title="My NCBI help"><img border="0"
 src="http://www.ncbi.nlm.nih.gov/corehtml/query/MyNCBI/myncbihelpicon.gif" alt="My NCBI help" /></a></td></tr><tr><td colspan="2" nowrap="nowrap"><a
-href="http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT23S0VA3015" title="Click to sign in"
-onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT23S0VA3015');return false;">[Sign In]</a> <a
-href="http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT23S0VA3015" title="Click to register for an account"
-onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT23S0VA3015');return false;">[Register]</a></td></tr></table></div>
+href="http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT92TCCMY015" title="Click to sign in"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT92TCCMY015');return false;">[Sign In]</a> <a
+href="http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT92TCCMY015" title="Click to register for an account"
+onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_url=http%3A%2F%2Fwww%2Encbi%2Enlm%2Enih%2Egov%2Fblast%2FBlast%2Ecgi%3FCMD%3DGet%26FORMAT%5FTYPE%3DText%26OLD%5FBLAST%3Dfalse%26RID%3DT92TCCMY015');return false;">[Register]</a></td></tr></table></div>
 		</div>
 		<a class="skp" href="#content-wrap">Jump to Page Content</a>		
 		<ul id="nav">
@@ -49,7 +49,7 @@ onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_
                    <a href="http://www.ncbi.nlm.nih.gov/">NCBI</a>/
                    <a href="Blast.cgi?CMD=Web&PAGE_TYPE=BlastHome">BLAST</a>/
                    <a href="Blast.cgi?PAGE=Nucleotides&PROGRAM=blastn&PAGE_TYPE=BlastSearch&BLAST_SPEC=">blastn suite</a>/
-                   <strong>Formatting Results - T23S0VA3015</strong>             
+                   <strong>Formatting Results - T92TCCMY015</strong>             
                 </div>
                 <div class="inlineDiv resHeader">				   
 				   <a  id="frmPage"  class="WAITING" href="#" submitForm="reformat">[Formatting options] </a>                   
@@ -72,15 +72,15 @@ onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_
                     }
                 //--></SCRIPT>                                
                 <table id="statInfo" class="WAITING">
-                <tr><td>Request ID</td><td> <b>T23S0VA3015</b></td></tr>
+                <tr><td>Request ID</td><td> <b>T92TCCMY015</b></td></tr>
                 <tr class="odd"><td>Status</td><td>Searching</td></tr>
-                <tr><td>Submitted at</td><td>Thu Jun  5 20:44:48 2014</td></tr>
-                <tr class="odd"><td>Current time</td><td>Thu Jun  5 20:45:58 2014</td></tr>
-                <tr><td>Time since submission</td><td>00:01:09</td></tr>
+                <tr><td>Submitted at</td><td>Sun Jun  8 12:11:24 2014</td></tr>
+                <tr class="odd"><td>Current time</td><td>Sun Jun  8 12:13:33 2014</td></tr>
+                <tr><td>Time since submission</td><td>00:02:08</td></tr>
                 </table>
                 <p class="WAITING">This page will be automatically updated in <b>2</b> seconds</p>       
                 <form action="Blast.cgi" enctype="application/x-www-form-urlencoded" method="POST" id="results">
-                <input name="FORMAT_TYPE" type="hidden" value="Text"><input name="OLD_BLAST" type="hidden" value="false"><input name="RID" type="hidden" value="T23S0VA3015"><input name="SEARCH_DB_STATUS" type="hidden" value="15"><input name="USER_TYPE" type="hidden" value="2"><input name="_PGR" type="hidden" value="0">                
+                <input name="FORMAT_TYPE" type="hidden" value="Text"><input name="OLD_BLAST" type="hidden" value="false"><input name="RID" type="hidden" value="T92TCCMY015"><input name="SEARCH_DB_STATUS" type="hidden" value="31"><input name="USER_TYPE" type="hidden" value="2"><input name="_PGR" type="hidden" value="0">                
                 <input name="_PGR" type="hidden" value="0" >
                 <input name="CMD" type="hidden" value="Get">
                
@@ -92,7 +92,7 @@ onclick="MyNCBI_auto_submit('http://www.ncbi.nlm.nih.gov/account/register/?back_
 				   <input name="ENTREZ_QUERY" type="hidden" value="" />
                    <input name="CDD_RID" type="hidden" value="" />
                    <input name="CDD_SEARCH_STATE" type="hidden" value="" />
-                   <input name="RID" type="hidden" value="T23S0VA3015" />
+                   <input name="RID" type="hidden" value="T92TCCMY015" />
 				   <input name="STEP_NUMBER" type="hidden" value="" />
 				   <input name="CMD" type="hidden" value="Web"/>				
 				   <input NAME="PAGE_TYPE" type="hidden"  value="BlastFormatting"/>
