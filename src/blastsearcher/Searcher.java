@@ -71,7 +71,7 @@ public class Searcher extends Thread {
 				requestID = findRequestID("temp", (ID) + " request.html");
 				if (i >= 3)
 				{
-					Filewriter.printToFile(name + "\t" + query + "\t" + "RequestID could not be obtained");
+					Filewriter.printToFile(ID + "\t\t" + name + "\t" + query + "\t" + "RequestID could not be obtained");
 					ProgressTracker.completed();
 					break;
 				}
@@ -253,7 +253,7 @@ public class Searcher extends Thread {
 				}
 			}
 			if (ctr == 0) {
-				output = name + "\t" + search + "\t" + "No Results Found!";
+				output = ID + "\t" + requestID + name + "\t" + search + "\t" + "No Results Found!";
 			}
 			Filewriter.printToFile(output);
 			readFile.close();
