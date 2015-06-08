@@ -1,3 +1,5 @@
-Threads (adding more threads may not make program faster, max 100): 20
+Threads (adding more threads may not make program faster, max 100): 5
 Exclude Uncultured (y/n): y
-Blast Version (blastn/blastp/blastx/tblastn/tblastx, only blastn and blastp tested): blastp
+Blast Version (blastn/blastp/blastx/tblastn/tblastx, only blastn and blastp tested): blastn
+Maximum amount of times a failed request should be submitted (0 to 2 billion): 3
+Only process "CPU Limit Exceeded" Errors (y/n): n

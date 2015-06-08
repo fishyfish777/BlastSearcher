@@ -5,24 +5,28 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Filewriter {
+/*
+ * A static class accessed by the rest of the program, that solves the issue of threads writing to a single file.
+ * Accessible also through static methods like Main, if you need to write a message to the output file.
+ */
+public class OutputWriter
+{
 	static PrintWriter out;
+	
 	public static void printToFile(String input)
-	{	
-		
-		//System.out.println("In method printToFile, writing" + input);
-		try {
-			out = new PrintWriter(new BufferedWriter(new FileWriter(
-					"output.txt", true)));
+	{
+		try
+		{
+			out = new PrintWriter(new BufferedWriter(new FileWriter("output.txt", true)));
 			System.out.println("Wrote " + input + " to output.txt");
 			out.println(input);
 			out.flush();
 			out.close();
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//Output to ProgressTracker which ID has been written so that another ID can start
 	}
 }
